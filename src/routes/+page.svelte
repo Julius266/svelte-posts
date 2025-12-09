@@ -20,7 +20,7 @@
 
 	function login() {
 		const form = document.getElementById('loginForm');
-		axios.post('http://44.222.110.244/sveltephp/login/login.php', new FormData(form)).then((res) => {
+		axios.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/login/login.php', new FormData(form)).then((res) => {
 			if (res.data.res === 'success') {
 				localStorage.setItem('token', JSON.stringify(res.data.token));
 				goto('/Inicio');

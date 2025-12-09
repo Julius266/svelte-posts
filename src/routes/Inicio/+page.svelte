@@ -13,7 +13,7 @@
 	let usuario = '';
 	function getUser() {
 		const token = JSON.parse(localStorage.getItem('token'));
-		axios.post('http://44.222.110.244/sveltephp/posts/user.php?token=' + token).then((res) => {
+		axios.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/posts/user.php?token=' + token).then((res) => {
 			usuario = res.data.user;
 			localStorage.setItem('user', JSON.stringify(res.data.user));
 			localStorage.setItem('foto', JSON.stringify(res.data.foto));
@@ -30,7 +30,7 @@
 	});
 
 	async function ajax() {
-		const res = await fetch('http://44.222.110.244/sveltephp/posts/posts.php');
+		const res = await fetch('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/posts/posts.php');
 		posts = await res.json();
 		if (res.ok) {
 			return posts;

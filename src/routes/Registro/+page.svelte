@@ -30,7 +30,7 @@
 
 			const form = document.getElementById('registroForm');
 			axios
-				.post('http://44.222.110.244/sveltephp/login/registro.php', new FormData(form))
+				.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/login/registro.php', new FormData(form))
 				.then((res) => {
 					console.log('Respuesta:', res);
 					if (res.data == 'success') {
@@ -53,7 +53,7 @@
 		if (email != '') {
 			const datosEmail = new FormData();
 			datosEmail.append('email', email);
-			axios.post('http://44.222.110.244/sveltephp/login/validarEmail.php', datosEmail).then((res) => {
+			axios.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/login/validarEmail.php', datosEmail).then((res) => {
 				console.log(res);
 				if (res.data === 'success') {
 					show = true;

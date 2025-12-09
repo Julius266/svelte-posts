@@ -17,7 +17,7 @@
 	let post = {};
 
 	function getPost() {
-		axios.get('http://44.222.110.244/sveltephp/posts/post.php?id=' + id).then((res) => {
+		axios.get('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/posts/post.php?id=' + id).then((res) => {
 			post = res.data;
 		});
 	}
@@ -25,7 +25,7 @@
 	function editar() {
 		const form = document.getElementById('formEditar');
 		axios
-			.post('http://44.222.110.244/sveltephp/posts/editarPost.php', new FormData(form))
+			.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/posts/editarPost.php', new FormData(form))
 			.then((res) => {
 				if (res.data == 'success') {
 					Swal.fire('Muy bien', 'Tu post fue editado', 'success');
@@ -48,7 +48,7 @@
 			confirmButtonText: 'Sí, bórralo.'
 		}).then((result) => {
 			if (result.value) {
-				axios.post('http://44.222.110.244/sveltephp/posts/eliminar.php?id=' + id).then((res) => {
+				axios.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/posts/eliminar.php?id=' + id).then((res) => {
 					Swal.fire({
 						title: 'Borrado!',
 						text: 'Tu post ha sido borrado',

@@ -19,7 +19,7 @@
 
 	function guardar() {
 		const form = document.getElementById('formGuardar');
-		axios.post('http://44.222.110.244/sveltephp/posts/altaPost.php', new FormData(form)).then((res) => {
+		axios.post('https://anthropomorphically-innless-trent.ngrok-free.dev/sveltephp/posts/altaPost.php', new FormData(form)).then((res) => {
 			if (res.data == 'success') {
 				Swal.fire('Muy bien', 'Tu post fue guardado', 'success');
 				goto('/');
